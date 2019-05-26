@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<title>The elevator problem (with gorillas).</title>
+		
+		<script language="javascript" type="text/javascript">
+			var totalWeight= 0. , limitWeight= 500. , maxWeight= 550.;
+			var newWeight;
+			
+			do {
+				newWeight = Math.floor(Math.random()*(maxWeight+1));
+				
+				if ((totalWeight + newWeight) <= limitWeight) {
+					totalWeight += newWeight;
+					document.write("New weight = " +newWeight+ " total weight = " +totalWeight+ "<br />");
+					newWeight = 0.;
+				}
+				
+				else
+					document.write("You weigh " +newWeight+ " lb. I'm sorry, but you can't get on.");
+			} while ((totalWeight + newWeight) <= limitWeight);
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
+			

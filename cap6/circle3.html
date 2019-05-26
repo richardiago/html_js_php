@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Circle Area (2)</title>
+		<script language="javascript" type="text/javascript">
+			function getArea(f) {
+				var r=parseFloat(f.radius.value);
+				f.area.value = Math.PI*r*r;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Circle Area (3)</h1>
+		<form>
+			Enter radius, then press tab key or click on "area" box.<br />
+			radius (cm): <input type="text" name="radius" size="6" maxlength="7" value="-99", onblur="getArea(form);" />
+			area (cm<sup>2</sup>): <input type="text" name="area" size="6" maxlength="7" value="-99" />
+		</form>
+	</body>
+</html>

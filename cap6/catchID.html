@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<title>Receive ID and password from another document.</title>
+	</head>
+	
+	<body>
+		<form name="catchForm">
+			<input type="hidden" name="info">
+		</form>
+		<script language="javascript" type="text/javascript">
+			catchForm.info.value=window.location;
+			
+			function getID(str)
+			{
+				theleft=str.indexOf("=")+1;
+				theright=str.lastIndexOf("&");
+				return str.substring(theleft, theright);		
+			
+			}
+			
+			
+			function getPW(str)
+			{	
+				theleft=str.lastIndexOf("=")+1;
+				return str.substring(theleft);		
+			}
+			
+			document.write("ID is " +getID(catchForm.info.value)+ ", PW is " +getPW(catchForm.info.value));
+		</script>
+	</body>
+</html>
+			
+			
+			
+			
+			

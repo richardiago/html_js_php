@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Get ID and password.</title>
+		<script language="javascript" type="text/javascript">
+			function checkIDPW() {
+			
+				var PWinput=login_form.PW.value;
+				var IDinput=login_form.ID.value;
+				var flag=prompt("ID= " +IDinput+ ", PW = " +PWinput+". OK (y or n)?");
+				if (flag == "y") return true; else return false;		
+			
+			}
+		</script>
+	</head>
+	
+	<body>
+		<form method="link" action="catchID.html" name="login_form" onsubmit="checkIDPW();">
+			ID: <input type="text" name="ID">
+			PW: <input type="text" name="PW">
+			<input type="submit" value="Access protected page.">
+		</form>
+	</body>
+</hmtl>		

@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Circle Stuff</title>
+		<script language="javascript" type="text/javascript">
+			function circleStuff(f) {
+			
+				var r=parseFloat(f.radius.value);
+				f.area.value=Math.PI*r*r;
+				f.circumference.value=2*Math.PI*r;
+			}
+			
+		</script>
+	</head>
+	<body bgcolor="#99ccff">
+		<h1>Circle Stuff</h1>
+	
+		<form>
+			Enter radius, then press tab key or click on "area" box.<br />
+			radius (cm): <input type="text" name="radius" size="6" maxlength="7" value="-99", onblur="circleStuff(form);" />
+			area (cm<sup>2</sup>): <input type="text" name="area" size="6" maxlength="7" value="-99" />
+			circumference (cm): <input type="text" name="circumference" size="6" maxlength="7" value="-99" />
+		</form>
+	</body>
+</html>
+	

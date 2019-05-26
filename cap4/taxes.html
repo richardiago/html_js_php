@@ -1,0 +1,20 @@
+<html>
+	<head>
+		<title>Calculate income tax</title>
+		
+		<script language="javascript" type="text/javascript">
+		
+			var income = parseFloat(prompt("Enter your income (no commas!): $"));
+			var tax, loRate= .17, hiRate= .37;
+			
+			if (income <= 50000.)
+				tax = income*loRate;
+			else
+				tax = 50000.*loRate + (income-50000.)*hiRate;
+			
+			document.write("For an income of $" +income+ ", your tax is $" +tax.toFixed(2)+ ".");
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

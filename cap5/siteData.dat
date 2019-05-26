@@ -1,0 +1,14 @@
+var siteID = new Array();
+function IDArray (ID, lat, lon, elev) {
+
+	this.ID=ID;
+	this.lat=lat;
+	this.lon=lon;
+	this.elev=elev;
+}
+
+siteID[0]=new IDArray("Drexel",39.955,−75.188,10);
+siteID[1]=new IDArray("home",40.178,−75.333,140);
+siteID[2]=new IDArray("NC",35.452,−81.022,246);
+siteID[3]=new IDArray("Argentina",−34.617,−58.367,30);
+siteID[4]=new IDArray("Netherlands",52.382,4.933,−1);
