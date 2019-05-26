@@ -1,36 +1,35 @@
-ato<?php
-	$SN=$_POST["SN"];
-	$len=strlen($SN);
+			<?php
+				$SN=$_POST["SN"];
+				$len=strlen($SN);
 
-	$inFile= "WVdata.dat";
-	$in = fopen($inFile, "r") or die("Can't open file");
+				$inFile= "WVdata.dat";
+				$in = fopen($inFile, "r") or die("Can't open file");
 
-	$line=fgets($in);
+				$line=fgets($in);
 
-	$found = 0;
+				$found = 0;
 
-	while ((!feof($in)) && ($found == 0)) {
-		list($SN_dat, $A, $B, $C, $beta, $tau)=fscan($in, "%s %f %f %f %f %f");
-		if (strncasecmp($SN_dat, $SN, $len)==0)
-			$found=1;
-	}
+				while ((!feof($in)) && ($found == 0)) {
+					list($SN_dat, $A, $B, $C, $beta, $tau)=fscanf($in, "%s %f %f %f %f %f");
+					if (strncasecmp($SN_dat, $SN, $len)==0)
+						$found=1;
+				}
 
-	fclose($in);
+				fclose($in);
 
-	if ($found == 0) echo "Couldn't find this instrument";
-	else {
+				if ($found == 0) echo "Couldn't find this instrument";
+				else {
 
-			echo "<p><table
-			border='2'><tr><th>Quantity</th><th>Value</th></tr>"."
-			</td></tr>";
-			echo "<tr><td>Instrument ID</td><td>$SN</td></tr>";
-			echo "<tr bgcolor='silver'><td colspan='2'>
-			Calibration Constants</td></tr>";
-			echo "<tr><td>A</td><td>$A</td></tr>";
-			echo "<tr><td>B</td><td>$B</td></tr>";
-			echo "<tr><td>C</td><td>$C</td></tr>";
-			echo "<tr><td>&tau;</td><td>$tau</td></tr>";
-			echo "<tr><td>&beta;</td><td>$beta</td></tr>";
-			echo "</table>";
-	}
-?>
+					echo "<p><table border='2'><tr><th>Quantity</th><th>Value</th></tr>";
+					echo "</td></tr>";
+					echo "<tr><td>Instrument ID</td><td>$SN</td></tr>";
+					echo "<tr bgcolor='silver'>
+					<td colspan='2'>Calibration Constants</td></tr>";
+					echo "<tr><td>A</td><td>$A</td></tr>";
+					echo "<tr><td>B</td><td>$B</td></tr>";
+					echo "<tr><td>C</td><td>$C</td></tr>";
+					echo "<tr><td>&tau;</td><td>$tau</td></tr>";
+					echo "<tr><td>&beta;</td><td>$beta</td></tr>";
+					echo "</table>";
+				}
+			?>
